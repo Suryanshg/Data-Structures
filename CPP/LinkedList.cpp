@@ -1,38 +1,43 @@
 #include <iostream>
 using namespace std;
 
+void printLL();
+
 
 class Node{
     public:
     int data;
     Node* next;
+    
 };
 
-class LinkedList{
-    public:
-    Node* head;
 
-    LinkedList(int val){
-        head->data=val;
-        head->next=NULL;
+void printLL(Node* head){
+    while(head!=NULL){
+        cout<<head->data<<endl;
+        head=head->next;
     }
+}
 
-    void printLL(){
-        Node* temp=head;
-        while(temp!=NULL){
-            cout<<temp->data<<endl;
-            temp=temp->next;
-        }
-    }
 
-};
 
 
 
 
 // Driver code
 int main(){
-    LinkedList LL=LinkedList(1);
-    LL.printLL();
+    Node* first=new Node();
+    Node* second=new Node();
+    Node* third=new Node();
+
+    first->data=1;
+    second->data=2;
+    third->data=3;
+
+    first->next=second;
+    second->next=third;
+    third->next=NULL; 
+
+    printLL(first); 
     return 0;
 }
