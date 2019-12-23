@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void printLL();
+
 
 
 class Node{
@@ -12,12 +12,32 @@ class Node{
 };
 
 
+
+
 void printLL(Node* head){
-    while(head!=NULL){
-        cout<<head->data<<endl;
-        head=head->next;
+    Node* temp=head;
+    while(temp!=NULL){
+        cout<<temp->data<<endl;
+        temp=temp->next;
     }
 }
+
+void insert(Node** head, int val){
+    Node* newNode= new Node();
+    newNode->data=val;
+    newNode->next=NULL;
+
+    Node* temp=*head;
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+
+    temp->next=newNode;
+
+
+}
+
+
 
 
 
@@ -38,6 +58,8 @@ int main(){
     second->next=third;
     third->next=NULL; 
 
+   
+    insert(&first,4);
     printLL(first); 
     return 0;
 }
