@@ -1,9 +1,7 @@
 #include <iostream>
 using namespace std;
 
-
-
-
+// Class to implement a node in a Linked List
 class Node{
     public:
     int data;
@@ -11,9 +9,7 @@ class Node{
     
 };
 
-
-
-
+// Function to print a Linked List
 void printLL(Node* head){
     Node* temp=head;
     while(temp!=NULL){
@@ -22,6 +18,7 @@ void printLL(Node* head){
     }
 }
 
+// Function to append a node in a Linked List
 void insert(Node** head, int val){
     Node* newNode= new Node();
     newNode->data=val;
@@ -36,13 +33,6 @@ void insert(Node** head, int val){
 
 
 }
-
-
-
-
-
-
-
 
 // Driver code
 int main(){
