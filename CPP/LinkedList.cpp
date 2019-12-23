@@ -10,18 +10,18 @@ class Node{
 
 class LinkedList{
     public:
-    Node* node;
+    Node* head;
 
     LinkedList(int val){
-        node->data=val;
-        node->next=NULL;
+        head->data=val;
+        head->next=NULL;
     }
 
     void printLL(){
-        Node* iter=node;
-        while(!iter){
-            cout<<iter->data<<endl;
-            iter=iter->next;
+        Node* temp=head;
+        while(temp!=NULL){
+            cout<<temp->data<<endl;
+            temp=temp->next;
         }
     }
 
@@ -33,7 +33,6 @@ class LinkedList{
 // Driver code
 int main(){
     LinkedList LL=LinkedList(1);
-    cout<<LL.node->data<<endl;
-    cout<<LL.node->next<<endl;
+    LL.printLL();
     return 0;
 }
