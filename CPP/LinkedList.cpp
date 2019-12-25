@@ -42,9 +42,17 @@ void deleteNode(Node** head, int n){
         temp=temp->next;
     }
     temp->next=temp->next->next;
+}
 
-
-
+//Function that returns the size of the LinkedList
+int size(Node* head){
+    Node* temp=head;
+    int count=0;
+    while(temp!=NULL){
+        count++;     
+        temp=temp->next;
+    }
+    return count;
 }
 
 // Driver code
@@ -64,13 +72,17 @@ int main(){
     cout<<"Original LinkedList is:"<<endl;
     printLL(first);
 
+    cout<<"Its size is:"<<size(first)<<endl;
+
     insert(&first,4);
     cout<<"LinkedList after adding 4 is:"<<endl;
     printLL(first); 
+    cout<<"Its size is:"<<size(first)<<endl;
 
     deleteNode(&first,1);
     cout<<"LinkedList after deleting the node at index 1 is:"<<endl;
     printLL(first);
+    cout<<"Its size is:"<<size(first)<<endl;
     
     
     
