@@ -20,12 +20,12 @@ void printLL(Node* head){
 }
 
 // Function to append a node in a Linked List
-void insert(Node** head, int val){
+void insert(Node* head, int val){
     Node* newNode= new Node();
     newNode->data=val;
     newNode->next=NULL;
 
-    Node* temp=*head;
+    Node* temp=head;
     while(temp->next!=NULL){
         temp=temp->next;
     }
@@ -34,9 +34,9 @@ void insert(Node** head, int val){
 }
 
 //Function to delete a specified node in a Linked List, indexing starts from 0
-void deleteNode(Node** head, int n){
+void deleteNode(Node* head, int n){
     int count=0;
-    Node* temp=*head;
+    Node* temp=head;
     while(count!=n-1){
         count++;
         temp=temp->next;
@@ -64,13 +64,32 @@ int getNode(Node* head,int index){
     else{
     int count=0;
     Node* temp=head;
-    int len=size(head);
     while(count<index && count<len){
         count++;
         temp=temp->next;
     }
    
     return temp->data;
+
+    }
+  
+}
+
+//Sets the node at a given index
+void setNode(Node* head,int index, int val){
+    int len=size(head);
+    if(index==len){
+        cout<<"Index "<<index<<" doesn't exist!"<<endl;
+    }
+    else{
+    int count=0;
+    Node* temp=head;
+    while(count<index && count<len){
+        count++;
+        temp=temp->next;
+    }
+   
+    temp->data=val;
 
     }
   
@@ -95,12 +114,12 @@ int main(){
 
     cout<<"Its size is:"<<size(first)<<endl;
 
-    insert(&first,4);
+    insert(first,4);
     cout<<"LinkedList after adding 4 is:"<<endl;
     printLL(first); 
     cout<<"Its size is:"<<size(first)<<endl;
 
-    deleteNode(&first,1);
+    deleteNode(first,1);
     cout<<"LinkedList after deleting the node at index 1 is:"<<endl;
     printLL(first);
     cout<<"Its size is:"<<size(first)<<endl;
@@ -108,10 +127,24 @@ int main(){
     cout<<"The element at index 0 is:"<<getNode(first,0)<<endl;
     cout<<"The element at index 1 is:"<<getNode(first,1)<<endl;
     cout<<"The element at index 2 is:"<<getNode(first,2)<<endl;
-    cout<<"The element at index 0 is:"<<getNode(first,0)<<endl;
-  
-     cout<<"The element at index 3 is:"<<getNode(first,3)<<endl;
+    cout<<"The element at index 3 is:"<<getNode(first,3)<<endl;
     
+    setNode(first,0,10);
+    cout<<"After setting 10 at index 0:"<<endl;
+    printLL(first);
+
+    setNode(first,1,20);
+    cout<<"After setting 20 at index 1:"<<endl;
+    printLL(first);
+
+    setNode(first,2,30);
+    cout<<"After setting 30 at index 2:"<<endl;
+    printLL(first);
+
+    
+    cout<<"After setting 40 at index 3:"<<endl;
+    setNode(first,3,40);
+    printLL(first);
     
     
     
