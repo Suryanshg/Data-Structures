@@ -55,6 +55,27 @@ int size(Node* head){
     return count;
 }
 
+//Returns the node at a given index
+int getNode(Node* head,int index){
+    int len=size(head);
+    if(index==len){
+        return -1;
+    }
+    else{
+    int count=0;
+    Node* temp=head;
+    int len=size(head);
+    while(count<index && count<len){
+        count++;
+        temp=temp->next;
+    }
+   
+    return temp->data;
+
+    }
+  
+}
+
 // Driver code
 int main(){
     Node* first=new Node();
@@ -83,6 +104,14 @@ int main(){
     cout<<"LinkedList after deleting the node at index 1 is:"<<endl;
     printLL(first);
     cout<<"Its size is:"<<size(first)<<endl;
+
+    cout<<"The element at index 0 is:"<<getNode(first,0)<<endl;
+    cout<<"The element at index 1 is:"<<getNode(first,1)<<endl;
+    cout<<"The element at index 2 is:"<<getNode(first,2)<<endl;
+    cout<<"The element at index 0 is:"<<getNode(first,0)<<endl;
+  
+     cout<<"The element at index 3 is:"<<getNode(first,3)<<endl;
+    
     
     
     
