@@ -21,6 +21,15 @@ def size(head):
         temp=temp.next
     return count
 
+# Function to append a node in a Linked List
+def insert(head, val):
+    temp=head
+    while(temp.next!=None):
+        temp=temp.next
+    newNode = Node(val,None);
+    temp.next=newNode;
+    
+
 # Driver Code
 if __name__=='__main__':
     third=Node(3,None)
@@ -29,6 +38,11 @@ if __name__=='__main__':
 
     print("Original LinkedList is:")
     printLL(first)
+    print("Its size is:"+str(size(first)))
+
+    insert(first, 4);
+    print("LinkedList after adding 4 is:")
+    printLL(first);
     print("Its size is:"+str(size(first)))
 
 
