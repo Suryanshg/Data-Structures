@@ -29,7 +29,7 @@ def insert(head, val):
     newNode = Node(val,None);
     temp.next=newNode;
 
- # Function to delete a specified node in a Linked List, indexing starts from 0
+# Function to delete a specified node in a Linked List, indexing starts from 0
 def deleteNode(head, n):
     count=0
     temp=head
@@ -38,7 +38,7 @@ def deleteNode(head, n):
         temp=temp.next        
     temp.next=temp.next.next
 
-    # Returns the node at a given index
+# Returns the node at a given index
 def getNode(head,index):
     len=size(head)
     if(index>=len):
@@ -51,7 +51,7 @@ def getNode(head,index):
             temp=temp.next
             
         return temp.data
-     # Sets the node at a given index
+# Sets the node at a given index
 def setNode(head,index,val):
     len=size(head)
     if(index>=len):
@@ -64,9 +64,15 @@ def setNode(head,index,val):
             temp=temp.next
             
         temp.data=val
-        
-    
-        
+
+# Function to reverse a LinkedList
+def reverse(head):
+    len=size(head)
+    for i in range(len//2):
+        temp=getNode(head,i)
+        setNode(head,i,getNode(head,len-1-i))
+        setNode(head,len-1-i,temp)
+           
 # Driver Code
 if __name__=='__main__':
     third=Node(3,None)
@@ -81,6 +87,10 @@ if __name__=='__main__':
     print("LinkedList after adding 4 is:")
     printLL(first);
     print("Its size is:"+str(size(first)))
+
+    print("Reversing this LinkedList:")
+    reverse(first)
+    printLL(first)
 
     print("LinkedList after deleting the node at index 1 is:")
     deleteNode(first, 1)
@@ -107,6 +117,8 @@ if __name__=='__main__':
     print("After setting 40 at index 3:")
     setNode(first,3,40)
     printLL(first)
+
+    
 
 
     
