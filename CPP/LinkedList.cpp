@@ -95,6 +95,17 @@ void setNode(Node* head,int index, int val){
   
 }
 
+
+//Function to reverse a LinkedList
+void reverse(Node* head){
+    int len=size(head);
+    for(int i=0;i<len/2;i++){
+        int temp=getNode(head,i);
+        setNode(head,i,getNode(head,len-1-i));
+        setNode(head,len-1-i,temp);
+    }       
+}
+
 // Driver code
 int main(){
     Node* first=new Node();
@@ -118,6 +129,11 @@ int main(){
     cout<<"LinkedList after adding 4 is:"<<endl;
     printLL(first); 
     cout<<"Its size is:"<<size(first)<<endl;
+
+    cout<<"Reversing this LinkedList:"<<endl;
+    reverse(first);
+    printLL(first);
+
 
     deleteNode(first,1);
     cout<<"LinkedList after deleting the node at index 1 is:"<<endl;
@@ -145,8 +161,6 @@ int main(){
     cout<<"After setting 40 at index 3:"<<endl;
     setNode(first,3,40);
     printLL(first);
-    
-    
     
     return 0;
 }
