@@ -44,7 +44,7 @@ void deleteNode(Node* head, int n){
     temp->next=temp->next->next;
 }
 
-//Function that returns the size of the LinkedList
+// Function that returns the size of the LinkedList
 int size(Node* head){
     Node* temp=head;
     int count=0;
@@ -55,10 +55,10 @@ int size(Node* head){
     return count;
 }
 
-//Returns the node at a given index
+// Returns the node at a given index
 int getNode(Node* head,int index){
     int len=size(head);
-    if(index==len){
+    if(index>=len){
         return -1;
     }
     else{
@@ -75,7 +75,7 @@ int getNode(Node* head,int index){
   
 }
 
-//Sets the node at a given index
+// Sets the node at a given index
 void setNode(Node* head,int index, int val){
     int len=size(head);
     if(index==len){
