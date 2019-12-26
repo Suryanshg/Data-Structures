@@ -37,9 +37,21 @@ def deleteNode(head, n):
         count=count+1
         temp=temp.next        
     temp.next=temp.next.next
-    
-    
 
+    # Returns the node at a given index
+def getNode(head,index):
+    len=size(head)
+    if(index>=len):
+        return -1
+    else:
+        count=0
+        temp=head
+        while(count<index and count<len):
+            count=count+1
+            temp=temp.next
+            
+        return temp.data
+        
 # Driver Code
 if __name__=='__main__':
     third=Node(3,None)
@@ -59,6 +71,11 @@ if __name__=='__main__':
     deleteNode(first, 1)
     printLL(first)
     print("Its size is:"+str(size(first)))
+
+    print("The element at index 0 is:"+str(getNode(first,0)))
+    print("The element at index 1 is:"+str(getNode(first,1)))
+    print("The element at index 2 is:"+str(getNode(first,2)))
+    print("The element at index 3 is:"+str(getNode(first,3)))
 
 
     
