@@ -93,7 +93,7 @@ class LinkedList{
         LL.printLL(first);
         System.out.println("Its size is:"+LL.size(first));
 
-        System.out.println("LinkedList after deleting the  node at index 1 is:");
+        System.out.println("LinkedList after deleting the node at index 1 is:");
         LL.deleteNode(first, 1);
         LL.printLL(first);
         System.out.println("Its size is:"+LL.size(first));

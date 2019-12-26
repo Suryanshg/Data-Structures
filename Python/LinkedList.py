@@ -28,6 +28,16 @@ def insert(head, val):
         temp=temp.next
     newNode = Node(val,None);
     temp.next=newNode;
+
+ # Function to delete a specified node in a Linked List, indexing starts from 0
+def deleteNode(head, n):
+    count=0
+    temp=head
+    while(count!=n-1):
+        count=count+1
+        temp=temp.next        
+    temp.next=temp.next.next
+    
     
 
 # Driver Code
@@ -43,6 +53,11 @@ if __name__=='__main__':
     insert(first, 4);
     print("LinkedList after adding 4 is:")
     printLL(first);
+    print("Its size is:"+str(size(first)))
+
+    print("LinkedList after deleting the node at index 1 is:")
+    deleteNode(first, 1)
+    printLL(first)
     print("Its size is:"+str(size(first)))
 
 
