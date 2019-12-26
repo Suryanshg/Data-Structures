@@ -75,6 +75,17 @@ class LinkedList{
             temp.data=val;
         }
     }
+
+    //Function to reverse a LinkedList
+    void reverse(Node head){
+        int len=size(head);
+        for(int i=0;i<len/2;i++){
+            int temp=getNode(head,i);
+            setNode(head,i,getNode(head,len-1-i));
+            setNode(head,len-1-i,temp);
+        }       
+    }
+
     // Driver Code 
     public static void main(String[] args) {
         System.out.println("Original LinkedList is:");
@@ -91,6 +102,10 @@ class LinkedList{
         System.out.println("LinkedList after adding 4 is:");
         LL.printLL(first);
         System.out.println("Its size is:"+LL.size(first));
+
+        System.out.println("Reversing this LinkedList:");
+        LL.reverse(first);
+        LL.printLL(first);
 
         System.out.println("LinkedList after deleting the node at index 1 is:");
         LL.deleteNode(first, 1);
