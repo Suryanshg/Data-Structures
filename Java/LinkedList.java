@@ -74,8 +74,7 @@ class LinkedList{
             }
             temp.data=val;
         }
-  
-}
+    }
     // Driver Code 
     public static void main(String[] args) {
         System.out.println("Original LinkedList is:");

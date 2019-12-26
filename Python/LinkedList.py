@@ -51,6 +51,21 @@ def getNode(head,index):
             temp=temp.next
             
         return temp.data
+     # Sets the node at a given index
+def setNode(head,index,val):
+    len=size(head)
+    if(index>=len):
+        print("Index "+str(index)+" doesn't exist!")
+    else:
+        count=0
+        temp=head
+        while(count<index):
+            count+=1
+            temp=temp.next
+            
+        temp.data=val
+        
+    
         
 # Driver Code
 if __name__=='__main__':
@@ -76,6 +91,22 @@ if __name__=='__main__':
     print("The element at index 1 is:"+str(getNode(first,1)))
     print("The element at index 2 is:"+str(getNode(first,2)))
     print("The element at index 3 is:"+str(getNode(first,3)))
+
+    setNode(first,0,10)
+    print("After setting 10 at index 0:")
+    printLL(first)
+
+    setNode(first,1,20)
+    print("After setting 20 at index 1:")
+    printLL(first)
+
+    setNode(first,2,30)
+    print("After setting 30 at index 2:")
+    printLL(first)
+ 
+    print("After setting 40 at index 3:")
+    setNode(first,3,40)
+    printLL(first)
 
 
     
