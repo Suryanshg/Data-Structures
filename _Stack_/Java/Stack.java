@@ -48,7 +48,24 @@ class Stack {
             System.out.println("Popped " + arr[size-1]);
             arr[size-1]=0;
             size--;
-            top=arr[size-1];
+            if(isEmpty()){
+                top=-1;
+            }
+            else{
+                top=arr[size-1];
+            }
+            
+        }
+    }
+
+    // Peeks the topmost element
+    int peek(){
+        if(isEmpty()){
+            System.out.println("Stack is empty.");
+            return -1;
+        }
+        else{
+            return top;
         }
     }
     
@@ -74,5 +91,17 @@ class Stack {
         S.pop();
         System.out.println("Stack after using pop is:");
         S.printStack();
+
+        System.out.println("Peek: "+S.peek());
+        S.pop();
+        System.out.println("Peek: "+S.peek());
+        S.pop();
+        System.out.println("Peek: "+S.peek());
+        S.pop();
+        System.out.println("Peek: "+S.peek());
+        S.pop();
+        System.out.println("Peek: "+S.peek());
+        S.pop();
+
     }
 }

@@ -1,5 +1,4 @@
 class LinkedList {
-
     // Function to print a Linked List
     void printLL(Node head){
         Node temp=head;

@@ -52,7 +52,12 @@ class Stack{
             cout<<"Popped "<< arr[size-1]<<endl;
             arr[size-1]=0;
             size--;
-            top=arr[size-1];
+            if(isEmpty()){
+                top=-1;
+            }
+            else{
+                top=arr[size-1];
+            }
         }
     }
 
