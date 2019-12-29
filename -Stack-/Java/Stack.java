@@ -1,11 +1,11 @@
-class stack {
+class Stack {
     int arr[]; // The array that holds the stack
     int capacity; // Max Capacity of the stack
     int size; // The number of elements in the current stack
     int top; // The top element of the array
     
     // Constructor
-    stack(int input){
+    Stack(int input){
         capacity=input;
         size=0;
         arr=new int[capacity];
@@ -57,7 +57,7 @@ class stack {
     
     // Driver Code
     public static void main(String[] args) {
-        stack S=new stack(5);
+        Stack S=new Stack(5);
         S.push(1);
         S.push(2);
         S.push(3);
