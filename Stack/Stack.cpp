@@ -38,6 +38,12 @@ class Stack{
         }
     }
 
+    //Checks if the stack is empty or not
+    bool isEmpty(){
+        return size==0;
+    }
+
+
 
 
 
@@ -50,12 +56,14 @@ int main(){
     S->push(2);
     S->push(3);
     S->push(4);
-    S->push(10);
+    S->push(5);
     cout<<"The initial stack is:"<<endl;
     S->printStack();
    
-    cout<<"Stack after pushing 6 is:"<<endl;
+    cout<<"Stack after pushing 6 is: ";
     S->push(6);
+
+    cout<<"Is the stack empty?: "<<(S->isEmpty()==0?"No":"Yes")<<endl;
     
 
 }
