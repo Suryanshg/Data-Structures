@@ -43,6 +43,19 @@ class Stack{
         return size==0;
     }
 
+    // Pops the topmost element
+    void pop(){
+        if(isEmpty()){
+            cout<<"Stack is empty. Nothing can be popped."<<endl;
+        }
+        else{
+            cout<<"Popped "<< arr[size-1]<<endl;
+            arr[size-1]==0;
+            size--;
+            top=arr[size-1];
+        }
+    }
+
 
 
 
@@ -64,6 +77,10 @@ int main(){
     S->push(6);
 
     cout<<"Is the stack empty?: "<<(S->isEmpty()==0?"No":"Yes")<<endl;
+
+    S->pop();
+    cout<<"Stack after using pop is:"<<endl;
+    S->printStack();
     
 
 }
