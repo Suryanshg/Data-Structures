@@ -50,7 +50,7 @@ class Stack{
         }
         else{
             cout<<"Popped "<< arr[size-1]<<endl;
-            arr[size-1]==0;
+            arr[size-1]=0;
             size--;
             top=arr[size-1];
         }
