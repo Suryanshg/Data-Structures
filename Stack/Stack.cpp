@@ -20,14 +20,15 @@ class Stack{
     void printStack(){
         int count=size-1;
         while (count>=0){
-            cout<<arr[count]<<endl;
+            cout<<"|"<<arr[count]<<"|"<<endl;
             count--;
         }
+        cout<<"---"<<endl;
     }
 
     // Pushes an element at the top of the stack
     void push(int val){
-        if(size>=capacity-1){
+        if(size>capacity-1){
             cout<<"Stack Overflow"<<endl;
         }
         else{
@@ -48,6 +49,13 @@ int main(){
     S->push(1);
     S->push(2);
     S->push(3);
+    S->push(4);
+    S->push(10);
     cout<<"The initial stack is:"<<endl;
     S->printStack();
+   
+    cout<<"Stack after pushing 6 is:"<<endl;
+    S->push(6);
+    
+
 }
