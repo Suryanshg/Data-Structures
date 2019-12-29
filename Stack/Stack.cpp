@@ -56,10 +56,16 @@ class Stack{
         }
     }
 
-
-
-
-
+    // Peeks the topmost element
+    int peek(){
+        if(isEmpty()){
+            cout<<"Stack is empty."<<endl;
+            return -1;
+        }
+        else{
+            return top;
+        }
+    }
 };
 
 // Driver Code
@@ -81,6 +87,17 @@ int main(){
     S->pop();
     cout<<"Stack after using pop is:"<<endl;
     S->printStack();
-    
 
+    cout<<"Peek: "<<S->peek()<<endl;
+    S->pop();
+    cout<<"Peek: "<<S->peek()<<endl;
+    S->pop();
+    cout<<"Peek: "<<S->peek()<<endl;
+    S->pop();
+    cout<<"Peek: "<<S->peek()<<endl;
+    S->pop();
+    cout<<"Peek: "<<S->peek()<<endl;
+    S->pop();
+
+    return 0;
 }
