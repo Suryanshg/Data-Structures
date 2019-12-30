@@ -27,9 +27,27 @@ class Stack:
     def isEmpty(self):
         return self.size==0
     
-        
+    # Pops the topmost element
+    def pop(self):
+        if(self.isEmpty()):
+            print("Stack is empty. Nothing can be popped.")
+        else:
+            print("Popped " + str(self.arr[self.size-1]));
+            self.arr.pop(self.size-1);
+            self.size-=1;
+            if(self.isEmpty()):
+                self.top=-1
+            else:
+                self.top=self.arr[self.size-1];
     
-
+    # Peeks the topmost element
+    def peek(self):
+        if(self.isEmpty()):
+            print("Stack is empty.")
+            return -1
+        else:
+            return self.top
+            
 # Driver Code
 if __name__=='__main__':
     S=Stack(5)
@@ -45,3 +63,18 @@ if __name__=='__main__':
     S.push(6)
 
     print("Is the stack empty?: "+str(S.isEmpty()))
+
+    S.pop()
+    print("Stack after using pop is:")
+    S.printStack()
+
+    print("Peek: "+str(S.peek()))
+    S.pop()
+    print("Peek: "+str(S.peek()))
+    S.pop()
+    print("Peek: "+str(S.peek()))
+    S.pop()
+    print("Peek: "+str(S.peek()))
+    S.pop()
+    print("Peek: "+str(S.peek()))
+    S.pop()
