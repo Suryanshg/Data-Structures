@@ -22,6 +22,11 @@ class Stack:
             self.arr.append(val)
             self.top=val
             self.size+=1
+    
+    # Checks if the stack is empty or not
+    def isEmpty(self):
+        return self.size==0
+    
         
     
 
@@ -35,3 +40,8 @@ if __name__=='__main__':
     S.push(5)
     print("The initial stack is:")
     S.printStack()
+
+    print("Stack after pushing 6 is: ",end="")
+    S.push(6)
+
+    print("Is the stack empty?: "+str(S.isEmpty()))
